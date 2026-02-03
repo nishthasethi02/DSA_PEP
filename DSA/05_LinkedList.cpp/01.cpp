@@ -1,3 +1,5 @@
+// Singly Linked List
+
 #include <iostream>
 using namespace std;
 
@@ -26,6 +28,42 @@ void insertAtEnd(Node* &head, int val){
     temp->next = node;
 }
 
+// insertAtBeg
+void insertAtBeg(Node* &head, int val){
+    Node* node = new Node(val);
+    node->next = head;
+    head = node;
+}
+
+void insertAtPos(Node* head, int pos, int val){
+    Node* node = new Node(val);
+
+    if(pos == 1){
+        node->next = head;
+        head = node;
+        return;
+    }
+    Node* temp = head;
+    for(int i = 1; i < pos - 1 ; i++){
+        temp = temp -> next;
+    }
+
+    if(temp == NULL){
+        return;
+    }
+
+    node->next = temp->next;
+    temp->next = node;
+}    
+
+void printList(Node* head){ //kiunki just printing the values and not modifying so pass by value
+    Node* temp = head;
+    while(temp!=NULL){
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+    cout << "NULL" << endl;
+}
 
 int main(){
     // creating object of Node class
@@ -38,5 +76,10 @@ int main(){
     // cout << n1->next << endl; // NULL
 
     Node* head = NULL;
-    insertAtEnd(head, 1);
+    insertAtEnd(head, 2);
+    insertAtEnd(head, 3);
+    insertAtEnd(head, 4);
+    insertAtBeg(head, 1);
+    insertAtPos(head, 3, 100);
+    printList(head);
 }
