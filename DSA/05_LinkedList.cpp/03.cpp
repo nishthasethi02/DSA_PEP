@@ -44,3 +44,21 @@ void insertAtBeg(Node* &head, int val){
     node->next = head;
     head = node;
 }
+
+void printList(Node* head){
+    Node* temp = head;
+    do{ // so that temp move ahead and print at least once
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    } 
+    while(temp != head);
+    cout << "NULL" << endl;
+}
+
+int main(){
+    Node* head = NULL;
+    insertAtBeg(head, 1);
+    insertAtEnd(head, 2);
+    insertAtEnd(head, 3);
+    printList(head);
+}
