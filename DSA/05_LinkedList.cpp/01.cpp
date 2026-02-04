@@ -101,6 +101,52 @@ void deletionAtBeg(Node* &head){
     delete temp;
 }
 
+void deletionatpos(Node* &head, int pos){
+    if(head == NULL){
+        return;
+    }
+    Node* temp = head;
+    if(pos == 1){
+        head = head->next;
+        delete temp;
+        return;
+    }
+    for(int i =0; i <pos - 1 && temp != NULL; i++){
+        temp = temp->next;
+    }
+    if(temp == NULL || temp->next == NULL){
+        return;
+    }
+    Node* todelete = temp->next;
+    temp->next = temp->next->next;
+    delete todelete;
+}
+
+
+int countEven(Node* head){
+    int count = 0;
+    Node* temp = head;
+    while(temp != NULL){
+        if(temp->data % 2 == 0){
+            count ++;
+        }
+        temp = temp->next;
+    }
+    return count;
+}
+
+bool searchKey(Node* head, int key){ // by value - because just searching and not modifying
+    Node* temp = head;
+    if(head == NULL){
+        return false;
+    }
+    if(head->data == key){
+        return true;
+    }
+    return searchKey(head->next, key);
+}
+
+
 int main(){
     // creating object of Node class
 
@@ -112,10 +158,14 @@ int main(){
     // cout << n1->next << endl; // NULL
 
     Node* head = NULL;
-    insertAtEnd(head, 2);
-    insertAtEnd(head, 3);
-    insertAtEnd(head, 4);
-    insertAtBeg(head, 1);
-    insertAtPos(head, 3, 100);
-    printList(head);
+    insertAtEnd(head, 42);
+    insertAtEnd(head, 18);
+    insertAtEnd(head, 11);
+    insertAtEnd(head, 17);
+    insertAtBeg(head, 33);
+    //insertAtPos(head, 3, 100);
+    //deletionatpos(head, 3);
+    //cout << countEven(head);
+    //printList(head);
+    cout << searchKey(head, 11);
 }

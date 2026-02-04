@@ -55,8 +55,46 @@ void printList(Node* head){
     cout << "NULL" << endl;
 }
 
+void deletionAtEnd(Node* &head){
+    Node* temp = head;
+    if(head == NULL){
+        return;
+    }
+    if(head->next == head){
+        delete head;
+        head = NULL;
+        return;
+    }
+    while(temp->next->next != head){
+        temp = temp->next;
+    }
+    Node* todelete = temp->next;
+    temp->next = head;
+    delete todelete;
+}
+
+void deletionAtBeg(Node* &head){
+    Node* todelete = head;
+    Node* temp = head;
+    if(head == NULL){
+        return;
+    }
+    if(head->next == head){
+        delete head;
+        head = NULL;
+        return;
+    }
+    while(temp->next != head){
+        temp = temp->next;
+    }
+    temp->next = head->next;
+    head= head->next;
+    delete todelete;
+}
+
 int main(){
     Node* head = NULL;
+
     insertAtBeg(head, 1);
     insertAtEnd(head, 2);
     insertAtEnd(head, 3);
