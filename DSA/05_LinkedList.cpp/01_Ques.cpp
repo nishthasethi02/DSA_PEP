@@ -26,4 +26,9 @@
 
 // https://leetcode.com/problems/reverse-nodes-in-k-group/
 
-// https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
+// https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/[]
+
+// https://leetcode.com/problems/sort-list/
+
+// https://leetcode.com/problems/copy-list-with-random-pointer/
+
