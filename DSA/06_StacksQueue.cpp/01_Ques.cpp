@@ -38,3 +38,8 @@
 // https://leetcode.com/problems/implement-stack-using-queues/
 
 // https://www.geeksforgeeks.org/problems/queue-reversal/1
+
+// https://www.geeksforgeeks.org/problems/reverse-first-k-elements-of-queue/1
+
+// https://www.geeksforgeeks.org/problems/interleave-the-first-half-of-the-queue-with-second-half/1
+
