@@ -32,3 +32,9 @@
 // https://www.geeksforgeeks.org/problems/insert-an-element-at-the-bottom-of-a-stack/1
 
 // https://leetcode.com/problems/min-stack/
+
+// https://www.geeksforgeeks.org/problems/infix-to-postfix-1587115620/1
+
+// https://leetcode.com/problems/implement-stack-using-queues/
+
+// https://www.geeksforgeeks.org/problems/queue-reversal/1
