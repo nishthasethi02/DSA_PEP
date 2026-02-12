@@ -43,3 +43,16 @@
 
 // https://www.geeksforgeeks.org/problems/interleave-the-first-half-of-the-queue-with-second-half/1
 
+// https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1
+
+// https://www.geeksforgeeks.org/problems/previous-smaller-element/1
+
+// https://leetcode.com/problems/next-greater-element-i/description/
+
+// https://leetcode.com/problems/design-circular-queue/
+
+// https://leetcode.com/problems/gas-station/description/
+
+// https://leetcode.com/problems/asteroid-collision/
+
+// https://leetcode.com/problems/online-stock-span/description/
