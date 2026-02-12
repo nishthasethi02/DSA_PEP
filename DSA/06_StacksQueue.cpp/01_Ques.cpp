@@ -56,3 +56,5 @@
 // https://leetcode.com/problems/asteroid-collision/
 
 // https://leetcode.com/problems/online-stock-span/description/
+
+// https://www.geeksforgeeks.org/problems/the-celebrity-problem/1
