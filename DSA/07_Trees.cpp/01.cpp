@@ -28,5 +28,5 @@
     
     Complete Binary Tree -> all levels are filled except the last level and the last level should be filled from left to right
 
-    
+    A binary tree is balanced if for every node the height differene between its left & right surface is atmost 1
 */
