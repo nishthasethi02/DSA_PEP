@@ -29,4 +29,18 @@
 
 // https://www.geeksforgeeks.org/problems/k-distance-from-root/1
 
+// https://leetcode.com/problems/search-in-a-binary-search-tree/
+
+// https://leetcode.com/problems/range-sum-of-bst/
+
+// https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+
+// https://leetcode.com/problems/insert-into-a-binary-search-tree/
+
+// https://www.geeksforgeeks.org/problems/minimum-element-in-bst/0
+
+// https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/
+
+// https://leetcode.com/problems/kth-smallest-element-in-a-bst/ -> optimized github 
+
 // 

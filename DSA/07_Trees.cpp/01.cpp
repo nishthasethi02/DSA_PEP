@@ -37,4 +37,6 @@
             All values in the LST are smaller
             All values in the RST are greater
         Both LST & RST are also BST
+
+    -> Inorder Traversal of a BST is always sorted
 */
