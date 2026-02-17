@@ -29,4 +29,12 @@
     Complete Binary Tree -> all levels are filled except the last level and the last level should be filled from left to right
 
     A binary tree is balanced if for every node the height differene between its left & right surface is atmost 1
+
+    Binary Search Tree
+    -> A BST is a special type of tree where
+        Every node has at most two children
+        For every node ->
+            All values in the LST are smaller
+            All values in the RST are greater
+        Both LST & RST are also BST
 */
