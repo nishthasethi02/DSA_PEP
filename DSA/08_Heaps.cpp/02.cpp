@@ -21,4 +21,39 @@ class MaxHeap{
             }
         }
     }
+    void bubbleDown(){
+        int i = 0;
+        int size = heap.size();
+        while(i < size){
+            int i = 0;
+            int left = 2 * i;
+            int right = 2 * i + 1;
+            int largest = i;
+
+            if(left < size && heap[left] > heap[largest]){
+            largest = left;
+            }
+            if (right < size && heap[right] > heap[largest]){
+                largest = right;
+            }
+            if(largest != i){
+                swap(heap[i], heap[largest]);
+                i = largest;
+            }
+            else{
+                break;
+            }
+        }
+        
+    }
+   
+    void insert(int value){
+        heap.push_back(value);
+        bubbleUp(heap.size() - 1);
+    }
+
+    void deletee(){
+        swap(heap[0], heap[heap.size()-1]);
+        bubbleDown();
+    }
 };
