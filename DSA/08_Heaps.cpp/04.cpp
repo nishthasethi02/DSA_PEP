@@ -37,3 +37,5 @@ int main(){
 
 // https://www.geeksforgeeks.org/problems/k-largest-elements4206/1 -- Time Complexity -> n log(k)
 
+// https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1
+
