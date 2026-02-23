@@ -1,11 +1,3 @@
-/* 
-Priority Queue -> It is a special type of queue where elements are accessed on basis of priority, not the insertion order
-               -> By default it has high
-               -> internally it is 
-
-
-*/
-
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -40,3 +32,7 @@ int main(){
 // https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1
 
 // https://leetcode.com/problems/find-k-closest-elements/description/
+
+// https://leetcode.com/problems/top-k-frequent-elements/
+
+// https://www.geeksforgeeks.org/problems/is-binary-tree-heap/1
