@@ -8,3 +8,6 @@
 
 // https://leetcode.com/problems/flood-fill/description/
 
+// https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
+
+// https://www.geeksforgeeks.org/problems/topological-sort/1

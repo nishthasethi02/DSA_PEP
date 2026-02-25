@@ -41,7 +41,7 @@ void insertAtBeg(Node* &head, int val){
     }
     node->next = head;
     head->prev = node;
-    head = node;
+    head = node; // move head to node
 }
 
 
