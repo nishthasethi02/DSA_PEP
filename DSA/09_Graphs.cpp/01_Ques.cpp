@@ -61,7 +61,7 @@
 //     // remove nodes one by one from queue, and add them to your answer
 //     // for each removed node, decrease the indegree of its neighbor by 1
 //     // if any neighbor becomes indegree == 0, push that in queue
-//     // number of visited nodes != number of vertices -> cycle exists
+//     // number of visited nodes !=i number of vertices -> cycle exists
 //     vector<int> topoSort(int V, vector<vector<int>>& edges) {
 //         vector<vector<int>> adj(V);
 //         for(auto &i : edges){
@@ -109,3 +109,144 @@
 // };
 
 // https://leetcode.com/problems/number-of-islands/
+
+// https://www.geeksforgeeks.org/problems/prerequisite-tasks/1
+
+// DFS
+// class Solution {
+//   public:
+//     bool dfs(int node, vector<vector<int>> &adj, vector<int> &visited, vector<int> &rec){
+//         visited[node] = 1;
+//         rec[node] = 1;
+        
+//         for(auto neighbor : adj[node]){
+//             if(!visited[neighbor]){
+//                 if(dfs(neighbor, adj, visited, rec)){
+//                     return true;
+//                 }
+//             }
+//             else if(rec[neighbor]){
+//                 return true;//
+//             }
+//         }
+//         rec[node] = 0;
+//         return false;
+//     }
+//     bool isPossible(int N, int P, vector<pair<int, int> >& prerequisites) {
+//         // Code here
+//         vector<vector<int>> adj(N);
+        
+//         for(auto &i : prerequisites){
+//             int u = i.first;
+//             int v = i.second;
+            
+//             adj[v].push_back(u);
+//         }
+        
+//         vector<int> visited(N, 0);
+//         vector<int> rec(N, 0);
+        
+//         for(int i = 0; i < N; i++){
+//             if(!visited[i]){
+//                 // dfs
+//                 if(dfs(i, adj, visited, rec)){
+//                     return false;
+//                 }
+//             }
+//         }
+//         return true;
+//     }
+// };
+
+// BFS
+// class Solution {
+//   public:
+//     bool isPossible(int N, int P, vector<pair<int, int> >& prerequisites) {
+//         // Code here
+//         vector<vector<int>> adj(N);
+        
+//         for(auto &i : prerequisites){
+//             int u = i.first;
+//             int v = i.second;
+            
+//             adj[v].push_back(u);
+//         }
+        
+//         vector<int> indegree(N, 0);
+//         for(int i = 0; i < N; i++){
+//             for(auto neighbor : adj[i]){
+//                 indegree[neighbor]++;
+//             }
+//         }
+        
+//         queue<int> q;
+//         for(int i = 0; i < N; i++){
+//             if(indegree[i] == 0){
+//                 q.push(i);
+//             }
+//         }
+        
+//         int count = 0;
+//         while(!q.empty()){
+//             int node = q.front();
+//             q.pop();
+            
+//             count++;
+            
+//             for(auto &neighbor : adj[node]){
+//                 indegree[neighbor]--;
+//                 if(indegree[neighbor] == 0){
+//                     q.push(neighbor);
+//                 }
+//             }
+//         }
+//         if(count == N) return true;
+//         return false;
+//     }
+// };
+
+// https://www.geeksforgeeks.org/problems/course-schedule/1
+// class Solution {
+//   public:
+//     vector<int> findOrder(int n, vector<vector<int>> &prerequisites) {
+//         // code here
+//         vector<vector<int>> adj(n);
+//         for(auto i : prerequisites){
+//             int u = i[0];
+//             int v = i[1];
+            
+//             adj[v].push_back(u);
+//         }
+        
+//         vector<int> indegree(n, 0);
+//         for(int i = 0; i < n; i++){
+//             for(auto neighbor : adj[i]){
+//                 indegree[neighbor]++;
+//             }
+//         }
+        
+//         queue<int> q;
+//         for(int i = 0 ; i < n ;i++){
+//             if(indegree[i] == 0){
+//                 q.push(i);
+//             }
+//         }
+        
+//         vector<int> sortedorder;
+//         while(!q.empty()){
+//             int node = q.front();
+//             q.pop();
+            
+//             sortedorder.push_back(node);
+            
+//             for(auto &neighbor : adj[node]){
+//                 indegree[neighbor]--;
+//                 if(indegree[neighbor] == 0){
+//                     q.push(neighbor);
+//                 }
+//             }
+//         }
+//         if(sortedorder.size() == n) return sortedorder;
+//         return {};
+//     }
+// };
