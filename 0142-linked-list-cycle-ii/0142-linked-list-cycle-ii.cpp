@@ -6,17 +6,29 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-// class Solution {
-// public:
-//     ListNode *detectCycle(ListNode *head) {
-//         ListNode* slow = head;
-//         ListNode* fast = head;
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
 
-//         while(fast!=NULL && fast->next!=NULL){
-            
-//         }
-//     }
-// };
+        while(fast!=NULL && fast->next!=NULL){
+            slow = slow->next;
+            fast = fast->next->next;
+
+            if(slow == fast){
+                slow = head;
+            }
+
+            while(slow != fast){
+                slow = slow->next;
+                fast = fast->next;
+            }
+            return fast;
+        }
+        return NULL;
+    }
+};
 
 /**
  * Definition for singly-linked list.
@@ -26,30 +38,30 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
-public:
-    ListNode *detectCycle(ListNode *head) {
-       // if(head == NULL) return NULL;
-        ListNode* slow = head;
-        ListNode* fast = head;
+// class Solution {
+// public:
+//     ListNode *detectCycle(ListNode *head) {
+//        if(head == NULL) return NULL;
+//         ListNode* slow = head;
+//         ListNode* fast = head;
 
-        while(fast != NULL && fast->next != NULL){
-            slow = slow->next;
-            fast = fast->next->next;
+//         while(fast != NULL && fast->next != NULL){
+//             slow = slow->next;
+//             fast = fast->next->next;
 
-            if(slow == fast){
-                slow = head;
+//             if(slow == fast){
+//                 slow = head;
 
-            while(slow!=fast){
-                slow=slow->next;
-                fast=fast->next;
-            }
-            return fast;
-            }
-        }
-        return NULL;
-    }
-};
+//             while(slow!=fast){
+//                 slow=slow->next;
+//                 fast=fast->next;
+//             }
+//             return fast;
+//             }
+//         }
+//         return NULL;
+//     }
+// };
 
 /**
  * Definition for singly-linked list.
