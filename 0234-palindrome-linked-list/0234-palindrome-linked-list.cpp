@@ -11,19 +11,19 @@
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        ListNode* slow = head;
-        ListNode* fast = head;
-
-        while(fast!=NULL && fast->next!=NULL){
-            slow = slow->next;
-            fast = fast->next->next;
+        ListNode* copyhead = new ListNode(head->val);
+        ListNode* copytail = copyhead;
+        ListNode* temp = head->next;
+        while(temp!=NULL){
+            copytail->next = new ListNode(temp->val);
+            copytail = copytail->next;
+            temp = temp->next;
         }
-
         ListNode* prev = NULL;
-        ListNode* curr = slow;
+        ListNode* curr = copyhead;
         ListNode* next = NULL;
 
-        while(curr != NULL){
+        while(curr!=NULL){
             next = curr->next;
             curr->next = prev;
             prev = curr;
@@ -34,10 +34,10 @@ public:
         ListNode* p2 = prev;
         while(p2!=NULL){
             if(p1->val!=p2->val){
-            return false;  
+                return false;
             }
-            p1=p1->next;
-            p2=p2->next;
+            p1 = p1->next;
+            p2 = p2->next;
         }
         return true;
     }
@@ -48,32 +48,31 @@ public:
 //     bool isPalindrome(ListNode* head) {
 //         ListNode* slow = head;
 //         ListNode* fast = head;
-        
-//         while(fast != NULL && fast->next != NULL){
+
+//         while(fast!=NULL && fast->next!=NULL){
 //             slow = slow->next;
 //             fast = fast->next->next;
 //         }
 
 //         ListNode* prev = NULL;
 //         ListNode* curr = slow;
-//         ListNode* nextnode = NULL;
+//         ListNode* next = NULL;
 
 //         while(curr != NULL){
-//             nextnode = curr->next;
+//             next = curr->next;
 //             curr->next = prev;
 //             prev = curr;
-//             curr = nextnode;
+//             curr = next;
 //         }
 
 //         ListNode* p1 = head;
 //         ListNode* p2 = prev;
-
-//         while(p2 != NULL){
-//             if(p1->val != p2->val){
-//                 return false;
+//         while(p2!=NULL){
+//             if(p1->val!=p2->val){
+//             return false;  
 //             }
-//             p1 = p1->next;
-//             p2 = p2->next;
+//             p1=p1->next;
+//             p2=p2->next;
 //         }
 //         return true;
 //     }
