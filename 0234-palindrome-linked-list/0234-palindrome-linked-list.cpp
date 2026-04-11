@@ -19,6 +19,7 @@ public:
             copytail = copytail->next;
             temp = temp->next;
         }
+
         ListNode* prev = NULL;
         ListNode* curr = copyhead;
         ListNode* next = NULL;
@@ -31,7 +32,7 @@ public:
         }
 
         ListNode* p1 = head;
-        ListNode* p2 = prev;
+        ListNode* p2 = copytail;
         while(p2!=NULL){
             if(p1->val!=p2->val){
                 return false;
