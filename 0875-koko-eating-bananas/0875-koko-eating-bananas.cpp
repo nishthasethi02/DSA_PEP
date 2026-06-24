@@ -5,7 +5,7 @@ public:
         int high = *max_element(piles.begin(),piles.end());
         while(low<=high){
             long long hours = 0;
-            int mid = (low+high)/2;
+            int mid = low+(high-low)/2;
             for(int i = 0; i < piles.size(); i++){
                 hours += ceil(piles[i]+mid-1)/mid;
             }
