@@ -12,52 +12,28 @@
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
-        vector<vector<int>> result;
-        if(root == NULL) return result;
-
+        vector<vector<int>> ans;
+        if(root==nullptr){
+            return ans;
+        }
         queue<TreeNode*> q;
         q.push(root);
         while(!q.empty()){
-            int levelSize = q.size();
-            vector<int> levelElements;
-            for(int i = 0; i < levelSize; i++){
-            TreeNode* frontNode = q.front();
-            q.pop();
-
-            levelElements.push_back(frontNode->val);
-
-            if(frontNode->left) q.push(frontNode->left);
-            if(frontNode->right) q.push(frontNode->right);
+            int size = q.size();
+            vector<int> level;
+            for(int i = 0; i < size; i++){
+                TreeNode* node = q.front();
+                q.pop();
+                if(node->left != nullptr){
+                    q.push(node->left);
+                }
+                if(node->right != nullptr){
+                    q.push(node->right);
+                }
+                level.push_back(node->val);
             }
-        result.push_back(levelElements);
+            ans.push_back(level);
         }
-
-        return result;
+        return ans;
     }
 };
-
-// void levelOrder(Node* root){
-//     if(root == NULL) return;
-
-//     // first create a queue and push root and null
-//     queue<Node*> q;
-//     q.push(root);
-//     q.push(NULL);
-
-//     while(!q.empty()){
-//         Node* frontNode = q.front();
-//         q.pop();
-
-//         levelElements.push_back(frontNode->val);
-
-//             if(frontNode->left) q.push(frontNode->left);
-//             if(frontNode->right) q.push(frontNode->right);
-//             }
-//         result.push_back(levelElements);
-//         }
-
-//         return result;
-//     }
-
-//     }
-// }
