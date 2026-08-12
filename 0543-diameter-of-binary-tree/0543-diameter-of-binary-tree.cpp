@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    int ans = 0;
     int height(TreeNode* root){
         if(root == NULL){
             return 0;
@@ -18,18 +19,47 @@ public:
 
         int leftH = height(root->left);
         int rightH = height(root->right);
-
+        ans = max(ans, leftH + rightH);
         return max(leftH, rightH) + 1;
     }
     int diameterOfBinaryTree(TreeNode* root) {
-        if(root == NULL){
-            return 0;
-        }
-
-        int leftDia = diameterOfBinaryTree(root->left);
-        int rightDia = diameterOfBinaryTree(root->right);
-        int currDia = height(root->left) + height(root->right);
-
-        return max(leftDia, max(rightDia, currDia));
+        height(root);
+        return ans;
     }
 };
+
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     int height(TreeNode* root){
+//         if(root == NULL){
+//             return 0;
+//         }
+
+//         int leftH = height(root->left);
+//         int rightH = height(root->right);
+
+//         return max(leftH, rightH) + 1;
+//     }
+//     int diameterOfBinaryTree(TreeNode* root) {
+//         if(root == NULL){
+//             return 0;
+//         }
+
+//         int leftDia = diameterOfBinaryTree(root->left);
+//         int rightDia = diameterOfBinaryTree(root->right);
+//         int currDia = height(root->left) + height(root->right);
+
+//         return max(leftDia, max(rightDia, currDia));
+//     }
+// };
