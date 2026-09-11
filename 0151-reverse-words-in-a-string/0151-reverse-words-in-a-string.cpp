@@ -1,8 +1,8 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        int n = s.length();
         string ans = "";
+        int n = s.length();
         reverse(s.begin(), s.end());
         for(int i = 0; i < n; i++){
             string word = "";
@@ -18,3 +18,4 @@ public:
         return ans.substr(1);
     }
 };
+
