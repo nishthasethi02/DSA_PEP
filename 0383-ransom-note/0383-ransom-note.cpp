@@ -2,14 +2,12 @@ class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
         unordered_map<char, int> mp;
-
-        for(char c : magazine){
-            mp[c]++;
+        for(int x : magazine){
+            mp[x]++;
         }
-
-        for(char c : ransomNote){
-            mp[c]--;
-            if(mp[c] < 0){
+        for(int i : ransomNote){
+            mp[i]--;
+            if(mp[i] < 0){
                 return false;
             }
         }
