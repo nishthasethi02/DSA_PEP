@@ -1,29 +1,15 @@
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-        int n = nums.size();
         unordered_map<int, int> mp;
-        for(int x : nums){
-            mp[x]++;
-            if(mp[x] > 1){
+        for(int i : nums){
+            mp[i]++;
+        }
+        for(auto x : mp){
+            if(x.second > 1){
                 return true;
             }
         }
         return false;
     }
 };
-
-// class Solution {
-// public:
-//     bool containsDuplicate(vector<int>& nums) {
-//         int n = nums.size();
-//         unordered_set<int> us;
-//         for(int i = 0; i < n; i++){
-//             if(us.count(nums[i])){
-//                 return true;
-//             }
-//             us.insert(nums[i]);
-//         }
-//         return false;
-//     }
-// };
