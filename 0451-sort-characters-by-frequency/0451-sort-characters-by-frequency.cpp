@@ -2,20 +2,20 @@ class Solution {
 public:
     string frequencySort(string s) {
         unordered_map<char, int> freq;
-
-        for (char c : s) {
+        for(char c : s){
             freq[c]++;
         }
-        vector<string> bucket(s.size() + 1);
-
-        for (auto &p : freq) {
-            bucket[p.second] += string(p.second, p.first);
+        vector<char> chars;
+        for(auto x : freq){
+            chars.push_back(x.first);
         }
-        string result = "";
-        for (int i = s.size(); i >= 0; i--) {
-            result += bucket[i];
+        sort(chars.begin(), chars.end(), [&](char a, char b){
+            return freq[a] > freq[b];
+        });
+        string ans = "";
+        for(char c : chars){
+            ans += string(freq[c], c);
         }
-
-        return result;
+        return ans;
     }
 };
