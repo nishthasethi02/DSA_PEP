@@ -1,7 +1,7 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        string word ="";
+        string word = "";
         string words = "";
         reverse(s.begin(), s.end());
         for(int i = 0; i < s.length(); i++){
@@ -19,7 +19,7 @@ public:
             reverse(word.begin(), word.end());
             words += word;
         }
-        if (!words.empty() && words.back() == ' ') {
+        if(!words.empty() && words.back() == ' '){
             words.pop_back();
         }
         return words;
